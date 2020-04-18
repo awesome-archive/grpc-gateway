@@ -83,8 +83,10 @@ EXAMPLE_SWAGGERSRCS=$(SWAGGER_EXAMPLES:.proto=.swagger.json)
 EXAMPLE_DEPS=examples/internal/proto/pathenum/path_enum.proto examples/internal/proto/sub/message.proto examples/internal/proto/sub2/message.proto
 EXAMPLE_DEPSRCS=$(EXAMPLE_DEPS:.proto=.pb.go)
 
-RUNTIME_TEST_PROTO=runtime/internal/examplepb/example.proto
-RUNTIME_TEST_SRCS=$(RUNTIME_TEST_PROTO:.proto=pb.go)
+RUNTIME_TEST_PROTO=runtime/internal/examplepb/example.proto \
+	runtime/internal/examplepb/proto2.proto \
+	runtime/internal/examplepb/proto3.proto
+RUNTIME_TEST_SRCS=$(RUNTIME_TEST_PROTO:.proto=.pb.go)
 
 EXAMPLE_CLIENT_DIR=examples/internal/clients
 ECHO_EXAMPLE_SPEC=examples/internal/proto/examplepb/echo_service.swagger.json
